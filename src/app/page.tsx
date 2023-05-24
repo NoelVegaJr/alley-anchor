@@ -5,14 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faTwitter,
-  faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faCar,
-  faTruckFast,
-  faBowlFood,
-} from "@fortawesome/free-solid-svg-icons";
 import { Logo } from "@/components/Logo";
 
 function Header() {
@@ -92,7 +86,7 @@ function AnchorRed() {
 
 function AnchorBreak() {
   return (
-    <div className="w-full flex items-center my-2 max-w-2xl ">
+    <div className="w-full flex justify-center items-center my-2 max-w-2xl ">
       <Line />
       <div className="mx-8">
         <Anchor />
@@ -167,9 +161,11 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center flex-1 text-white z-20">
-          <div className="max-w-fit w-full -mt-60">
+          <div className="max-w-fit w-full -mt-96">
             <Header />
-            <AnchorBreak />
+            <div className="flex justify-center my-4">
+              <AnchorBreak />
+            </div>
             <SubHeading />
 
             <div className="flex items-center justify-center gap-12 mt-16">
