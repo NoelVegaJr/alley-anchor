@@ -1,13 +1,13 @@
+"use client";
 import { garamond } from "@/components/fonts/fonts";
 import Image from "next/image";
-import Link from "next/link";
+import NavLink from "@/components/NavLink";
+import FancyDivider from "@/components/FancyDivider";
+import Anchor from "@/components/Anchor";
+import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
-import { Logo } from "@/components/Logo";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import Spacer from "@/components/Spacer";
 
 function Header() {
   return (
@@ -28,126 +28,10 @@ function SubHeading() {
   );
 }
 
-function LandingCallToActionBtn({
-  children,
-  href,
-}: {
-  children: string;
-  href: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className={`w-full uppercase  md:text-xl bg-sea/90 text-gray-200  tracking-wider text-xl
-      hover:text-gray-100 hover:bg-peach/90 rounded py-2 text-center drop-shadow-2xl  font-extrabold transition-all duration-300 ${garamond.className}`}
-    >
-      {children}
-    </Link>
-  );
-}
-
-function Line() {
-  return <div className="border-2 w-full rounded-md border-gray-100" />;
-}
-
-function Anchor() {
-  return (
-    <div className="h-16 w-16 md:h-24 md:w-24 relative">
-      <Image src="/anchor-orange.png" fill={true} alt="Alley Anchor Logo" />
-    </div>
-  );
-}
-
-function AnchorBlack() {
-  return (
-    <div className="absolute w-fit h-fit bottom-0 -right-6 sm:bottom-4 sm:right-10">
-      <div className=" h-32 w-32 md:h-44 md:w-44 relative">
-        <Image src="/anchor-black.png" fill={true} alt="Alley Anchor Logo" />
-      </div>
-    </div>
-  );
-}
-
-function AnchorRed() {
-  return (
-    <div className=" w-fit h-fit  z-50">
-      <div className=" h-16 w-16 relative">
-        <Image src="/anchor.png" fill={true} alt="Alley Anchor Logo" />
-      </div>
-    </div>
-  );
-}
-
-function AnchorBreak() {
-  return (
-    <div className="w-full flex justify-center items-center my-2 max-w-2xl ">
-      <Line />
-      <div className="mx-8">
-        <Anchor />
-      </div>
-      <Line />
-    </div>
-  );
-}
-
-function AnchorRedBreak() {
-  return (
-    <div className="w-full flex items-center my-16 max-w-2xl relative">
-      <Line />
-      <div className="mx-8">
-        <Link href="/">
-          <AnchorRed />
-        </Link>
-      </div>
-      <Line />
-    </div>
-  );
-}
-
-function LogoBreak() {
-  return (
-    <div className="w-full flex items-center my-2 max-w-2xl">
-      <Line />
-      <div className="mx-8">
-        <Link href="/">
-          <Logo className="h-20 w-20 md:h-44 md:w-44" />
-        </Link>
-      </div>
-      <Line />
-    </div>
-  );
-}
-
-function Socials() {
-  return (
-    <div className="flex items-center gap-4 text-[#720F0F]">
-      <Link
-        href="https://www.facebook.com/alleyanchortacos"
-        target="_blank"
-        className="hover:-translate-y-2 transition-all duration-100"
-      >
-        <FontAwesomeIcon icon={faFacebook} className="w-10 h-10" />
-      </Link>
-      <Link
-        href="/"
-        className="hover:-translate-y-2 transition-all duration-100"
-      >
-        <FontAwesomeIcon icon={faTwitter} className="w-10 h-10" />
-      </Link>
-      <Link
-        href="/"
-        className="hover:-translate-y-2 transition-all duration-100"
-      >
-        <FontAwesomeIcon icon={faInstagram} className="w-10 h-10" />
-      </Link>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <>
-      <section className="bg-peach h-screen flex flex-col">
+      <section className="bg-peach h-screen flex flex-col relative">
         {/* Landing Background */}
         <div className="h-screen absolute top-0 left-0 w-full">
           <div className="h-full w-full absolute z-10">
@@ -168,23 +52,57 @@ export default function Home() {
         <div className="flex flex-col h-full mt-20 md:mt-8 mx-auto justify-center px-4 items-center z-20 max-w-fit w-full text-gray-200">
           <Header />
           <div className="flex justify-center my-4 w-full">
-            <AnchorBreak />
+            <FancyDivider>
+              <Anchor color="orange" />
+            </FancyDivider>
           </div>
           <SubHeading />
 
-          <div className="flex flex-col md:flex-row w-full gap-6 items-center justify-center px-6  mt-10">
-            <LandingCallToActionBtn href={"/menu"}>
-              Our Menu
-            </LandingCallToActionBtn>
-            <LandingCallToActionBtn href={"https://www.doordash.com"}>
+          <Spacer margin={"mb-14"} />
+
+          <div className="flex flex-col md:flex-row w-full gap-6 items-center justify-center px-6  ">
+            <NavLink href={"/menu"}>Our Menu</NavLink>
+            <NavLink newTab href={"https://www.doordash.com"}>
               Deliver
-            </LandingCallToActionBtn>
+            </NavLink>
+          </div>
+        </div>
+        <div className="flex flex-col -mt-52 gap-24 items-center justify-center z-20 ">
+          <div className="flex justify-center">
+            <Link
+              to="main"
+              spy={true}
+              smooth={true}
+              offset={-40}
+              duration={500}
+              className=" animate-pulse  absolute  rounded-full  hover:cursor-pointer"
+            >
+              <p className={`${garamond.className} text-gray-100 text-2xl `}>
+                Learn more
+              </p>
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <Link
+              to="main"
+              spy={true}
+              smooth={true}
+              offset={-40}
+              duration={500}
+              className="border-2 animate-pulse border-white absolute  rounded-full  w-12 h-12 grid place-content-center hover:cursor-pointer"
+            >
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="w-6 h-6 text-white animate-pulse "
+              />
+            </Link>
           </div>
         </div>
       </section>
 
       <section
         className={`bg-peach flex flex-col items-center w-full gap-4 ${garamond.className} py-20 px-4`}
+        id="main"
       >
         <article className="my-20">
           <p className="text-3xl text-darkPeach font-bold text-center mb-8">
@@ -197,8 +115,9 @@ export default function Home() {
             or get together.
           </p>
         </article>
-        <AnchorRedBreak />
-
+        <FancyDivider>
+          <Anchor color="red" />
+        </FancyDivider>
         <article className="my-20">
           <p className="text-2xl text-darkPeach font-bold text-center max-w-3xl ">
             Whether you’re headed for a night out with friends, or you’re trying
@@ -206,16 +125,6 @@ export default function Home() {
           </p>
         </article>
       </section>
-      <footer className="bg-sea py-8 px-4 relative overflow-hidden">
-        <div className="justify-center items-center flex flex-col ">
-          <LogoBreak />
-          <Socials />
-          <p className="uppercase text-[#720F0F] font-semibold my-6">
-            Powered by: Create Edge
-          </p>
-        </div>
-        <AnchorBlack />
-      </footer>
     </>
   );
 }
