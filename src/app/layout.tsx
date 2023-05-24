@@ -19,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col h-full min-h-screen">
-        {/* <Spacer margin="h-32 " /> */}
         <NavBar />
         <div className="flex-1">{children}</div>
         <Footer />
