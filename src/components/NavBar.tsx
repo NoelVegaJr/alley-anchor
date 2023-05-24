@@ -13,11 +13,11 @@ export default function NavBar() {
   return (
     <nav className="flex justify-between items-center pt-10 px-32 text-white sticky w-full top-0 z-50 bg-transparent">
       <Link href="/">
-        <Logo className="h-44 w-44" />
+        <Logo className="h-32 w-32" />
       </Link>
 
       <ul
-        className={`flex gap-12 text-white text-3xl font-semibold ${garamond.className}`}
+        className={`flex gap-12 text-white text-2xl font-semibold ${garamond.className}`}
       >
         <li>
           <Link href="/" className={`${pathname === "/" && "border-b-4"}`}>
