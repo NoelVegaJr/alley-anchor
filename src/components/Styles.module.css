@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  bottom: 100;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+.water_wave {
+  width: 2000px;
+  height: 2000px;
+  box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.8), 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.water_wave::after,
+.water_wave::before {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 125%;
+  top: -1000%;
+  left: 50%;
+  background-color: blue;
+}
+
+.water_wave::after {
+  border-radius: 35%;
+  animation: water_wave 8s linear infinite;
+}
+
+.water_wave::before {
+  border-radius: 35%;
+  top: 80%;
+  height: 135%;
+  background: lightblue;
+  animation: water_wave 8s linear infinite;
+}
+
+@keyframes water_wave {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    top: -50%;
+  }
+  50% {
+    top: -40%;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    top: -50%;
+  }
+}

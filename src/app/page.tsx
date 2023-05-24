@@ -121,13 +121,23 @@ function LogoBreak() {
 function Socials() {
   return (
     <div className="flex items-center gap-4 text-[#720F0F]">
-      <Link href="https://www.facebook.com/alleyanchortacos" target="_blank">
+      <Link
+        href="https://www.facebook.com/alleyanchortacos"
+        target="_blank"
+        className="hover:-translate-y-2 transition-all duration-100"
+      >
         <FontAwesomeIcon icon={faFacebook} className="w-10 h-10" />
       </Link>
-      <Link href="/">
+      <Link
+        href="/"
+        className="hover:-translate-y-2 transition-all duration-100"
+      >
         <FontAwesomeIcon icon={faTwitter} className="w-10 h-10" />
       </Link>
-      <Link href="/">
+      <Link
+        href="/"
+        className="hover:-translate-y-2 transition-all duration-100"
+      >
         <FontAwesomeIcon icon={faInstagram} className="w-10 h-10" />
       </Link>
     </div>
@@ -176,22 +186,25 @@ export default function Home() {
       <section
         className={`bg-peach flex flex-col items-center w-full gap-4 ${garamond.className} py-20 px-4`}
       >
-        <p className="text-3xl text-darkPeach font-bold text-center">
-          Are you looking for a great Mexican restaurant?
-        </p>
-        <p className="max-w-xl text-center font-semibold text-xl">
-          Alley Anchor is proud to serve authentic Mexican street food in Port
-          Clinton, and Marblehead areas, with a fun environment that&apos;s open
-          late, we&apos;re the perfect spot for your next late night out or get
-          together.
-        </p>
-
+        <article className="my-20">
+          <p className="text-3xl text-darkPeach font-bold text-center mb-8">
+            Are you looking for a great Mexican restaurant?
+          </p>
+          <p className="max-w-xl text-center font-semibold text-xl">
+            Alley Anchor is proud to serve authentic Mexican street food in Port
+            Clinton, and Marblehead areas, with a fun environment that&apos;s
+            open late, we&apos;re the perfect spot for your next late night out
+            or get together.
+          </p>
+        </article>
         <AnchorRedBreak />
 
-        <p className="text-2xl text-darkPeach font-bold text-center max-w-3xl ">
-          Whether you’re headed for a night out with friends, or you’re trying
-          to feed the whole family, you’ll want to stop by Alley Anchor.
-        </p>
+        <article className="my-20">
+          <p className="text-2xl text-darkPeach font-bold text-center max-w-3xl ">
+            Whether you’re headed for a night out with friends, or you’re trying
+            to feed the whole family, you’ll want to stop by Alley Anchor.
+          </p>
+        </article>
       </section>
       <footer className="bg-sea py-8 px-4 relative overflow-hidden">
         <div className="justify-center items-center flex flex-col ">
