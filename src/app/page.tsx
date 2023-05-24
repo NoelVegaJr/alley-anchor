@@ -12,7 +12,7 @@ import { Logo } from "@/components/Logo";
 function Header() {
   return (
     <div
-      className={`text-6xl font-semibold  gap-4 px-12 tracking-widest text-center ${garamond.className}`}
+      className={`text-3xl md:text-5xl font-semibold  gap-4 tracking-widest text-center ${garamond.className}`}
     >
       <p>Do you enjoy flavors</p>
       <p>from south of the border?</p>
@@ -22,32 +22,26 @@ function Header() {
 
 function SubHeading() {
   return (
-    <div className="text-3xl text-center tracking-wide">
-      <p>Try our authentic Mexican street food </p>
-      <p>the next time you eat out</p>
+    <div className="text-xl md:text-2xl text-center tracking-wide">
+      <p>Try our authentic Mexican street food the next time you eat out</p>
     </div>
   );
 }
 
-function MenuButton() {
+function LandingCallToActionBtn({
+  children,
+  href,
+}: {
+  children: string;
+  href: string;
+}) {
   return (
     <Link
-      href="/menu"
-      className={`uppercase flex items-center gap-2 border-peach tracking-wide text-xl text-peach hover:text-gray-100 hover:bg-peach/90 rounded py-2 px-8 border-2  font-extrabold bg-red-500/10 hover:border-2  transition-all duration-300 ${garamond.className}`}
+      href={href}
+      className={`w-full uppercase  md:text-xl bg-sea/90 text-gray-200  tracking-wider text-xl
+      hover:text-gray-100 hover:bg-peach/90 rounded py-2 text-center drop-shadow-2xl  font-extrabold transition-all duration-300 ${garamond.className}`}
     >
-      Our Menu
-    </Link>
-  );
-}
-
-function DoorDash() {
-  return (
-    <Link
-      href="https://www.doordash.com/"
-      target="_blank"
-      className={`uppercase flex items-center gap-2 border-peach tracking-wide text-xl text-peach hover:text-gray-100 hover:bg-peach/90 rounded py-2 px-8 border-2  font-extrabold bg-red-500/10 hover:border-2  transition-all duration-300 ${garamond.className}`}
-    >
-      Order Now
+      {children}
     </Link>
   );
 }
@@ -58,7 +52,7 @@ function Line() {
 
 function Anchor() {
   return (
-    <div className="h-12 w-12 relative">
+    <div className="h-16 w-16 md:h-24 md:w-24 relative">
       <Image src="/anchor-orange.png" fill={true} alt="Alley Anchor Logo" />
     </div>
   );
@@ -66,8 +60,8 @@ function Anchor() {
 
 function AnchorBlack() {
   return (
-    <div className="absolute w-fit h-fit bottom-4 right-16">
-      <div className=" h-64 w-64 relative">
+    <div className="absolute w-fit h-fit bottom-0 -right-6 sm:bottom-4 sm:right-10">
+      <div className=" h-32 w-32 md:h-44 md:w-44 relative">
         <Image src="/anchor-black.png" fill={true} alt="Alley Anchor Logo" />
       </div>
     </div>
@@ -116,7 +110,7 @@ function LogoBreak() {
       <Line />
       <div className="mx-8">
         <Link href="/">
-          <Logo className="h-20 w-20" />
+          <Logo className="h-20 w-20 md:h-44 md:w-44" />
         </Link>
       </div>
       <Line />
@@ -143,7 +137,8 @@ function Socials() {
 export default function Home() {
   return (
     <>
-      <div className="bg-peach h-screen flex flex-col">
+      <section className="bg-peach h-screen flex flex-col">
+        {/* Landing Background */}
         <div className="h-screen absolute top-0 left-0 w-full">
           <div className="h-full w-full absolute z-10">
             <div className="h-full w-full relative">
@@ -154,30 +149,32 @@ export default function Home() {
                 alt="Alley Anchor Logo"
               />
             </div>
-            <div className="absolute top-0 left-0 bg-black/70 h-full w-full" />
-            <div className="absolute bottom-0 left-0 h-32 bg-gradient-to-t from-peach to-transparent w-full " />
-            {/* bg-gradient-to-t from-pink-500 via-red-500 to-yellow-500 */}
+            <div className="absolute top-0 left-0 bg-black/80 h-full w-full" />
+            <div className="absolute bottom-0 left-0 h-2 sm:h-6 bg-gradient-to-t from-peach to-transparent w-full " />
           </div>
         </div>
+        {/* End of Landing Background */}
 
-        <div className="flex justify-center items-center flex-1 text-white z-20">
-          <div className="max-w-fit w-full -mt-96">
-            <Header />
-            <div className="flex justify-center my-4">
-              <AnchorBreak />
-            </div>
-            <SubHeading />
+        <div className="flex flex-col h-full mt-20 md:mt-8 mx-auto justify-center px-4 items-center z-20 max-w-fit w-full text-gray-200">
+          <Header />
+          <div className="flex justify-center my-4 w-full">
+            <AnchorBreak />
+          </div>
+          <SubHeading />
 
-            <div className="flex items-center justify-center gap-12 mt-16">
-              <MenuButton />
-              <DoorDash />
-            </div>
+          <div className="flex flex-col md:flex-row w-full gap-6 items-center justify-center px-6  mt-10">
+            <LandingCallToActionBtn href={"/menu"}>
+              Our Menu
+            </LandingCallToActionBtn>
+            <LandingCallToActionBtn href={"https://www.doordash.com"}>
+              Deliver
+            </LandingCallToActionBtn>
           </div>
         </div>
-      </div>
+      </section>
 
       <section
-        className={`bg-peach flex flex-col items-center w-full gap-4 ${garamond.className} -mt-20 py-20`}
+        className={`bg-peach flex flex-col items-center w-full gap-4 ${garamond.className} py-20 px-4`}
       >
         <p className="text-3xl text-darkPeach font-bold text-center">
           Are you looking for a great Mexican restaurant?
@@ -191,12 +188,12 @@ export default function Home() {
 
         <AnchorRedBreak />
 
-        <p className="text-3xl text-darkPeach font-bold text-center max-w-3xl ">
+        <p className="text-2xl text-darkPeach font-bold text-center max-w-3xl ">
           Whether you’re headed for a night out with friends, or you’re trying
           to feed the whole family, you’ll want to stop by Alley Anchor.
         </p>
       </section>
-      <footer className="bg-sea py-8 relative">
+      <footer className="bg-sea py-8 px-4 relative overflow-hidden">
         <div className="justify-center items-center flex flex-col ">
           <LogoBreak />
           <Socials />
