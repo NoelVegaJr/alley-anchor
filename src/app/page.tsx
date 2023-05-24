@@ -184,8 +184,8 @@ export default function Home() {
         </p>
         <p className="max-w-xl text-center font-semibold text-xl">
           Alley Anchor is proud to serve authentic Mexican street food in Port
-          Clinton, and Marblehead areas, with a fun environment that's open
-          late, we’re the perfect spot for your next late night out or get
+          Clinton, and Marblehead areas, with a fun environment that&apos;s open
+          late, we&apos;re the perfect spot for your next late night out or get
           together.
         </p>
 
