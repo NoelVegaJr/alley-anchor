@@ -1,69 +1,168 @@
-import { Logo } from "@/components/Logo";
-import NavBar from "@/components/NavBar";
 import { garamond } from "@/components/fonts/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faCar,
+  faTruckFast,
+  faBowlFood,
+} from "@fortawesome/free-solid-svg-icons";
+import { Logo } from "@/components/Logo";
 
 function Header() {
   return (
     <div
-      className={`text-6xl font-semibold flex flex-col gap-4 px-12 tracking-widest ${garamond.className}`}
+      className={`text-6xl font-semibold  gap-4 px-12 tracking-widest text-center ${garamond.className}`}
     >
-      <p className="">Do you Enjoy flavors</p>
+      <p>Do you enjoy flavors</p>
       <p>from south of the border?</p>
+    </div>
+  );
+}
+
+function SubHeading() {
+  return (
+    <div className="text-3xl text-center tracking-wide">
+      <p>Try our authentic Mexican street food </p>
+      <p>the next time you eat out</p>
+    </div>
+  );
+}
+
+function MenuButton() {
+  return (
+    <Link
+      href="/menu"
+      className={`uppercase flex items-center gap-2 border-peach tracking-wide text-xl text-peach hover:text-gray-100 hover:bg-peach/90 rounded py-2 px-8 border-2  font-extrabold bg-red-500/10 hover:border-2  transition-all duration-300 ${garamond.className}`}
+    >
+      Our Menu
+    </Link>
+  );
+}
+
+function DoorDash() {
+  return (
+    <Link
+      href="https://www.doordash.com/"
+      target="_blank"
+      className={`uppercase flex items-center gap-2 border-peach tracking-wide text-xl text-peach hover:text-gray-100 hover:bg-peach/90 rounded py-2 px-8 border-2  font-extrabold bg-red-500/10 hover:border-2  transition-all duration-300 ${garamond.className}`}
+    >
+      Order Now
+    </Link>
+  );
+}
+
+function Line() {
+  return <div className="border-2 w-full rounded-md border-gray-100" />;
+}
+
+function Anchor() {
+  return (
+    <div className="h-12 w-12 relative">
+      <Image src="/anchor-orange.png" fill={true} alt="Alley Anchor Logo" />
+    </div>
+  );
+}
+
+function AnchorBlack() {
+  return (
+    <div className="absolute w-fit h-fit bottom-4 right-16">
+      <div className=" h-64 w-64 relative">
+        <Image src="/anchor-black.png" fill={true} alt="Alley Anchor Logo" />
+      </div>
+    </div>
+  );
+}
+
+function AnchorBreak() {
+  return (
+    <div className="flex items-center my-6">
+      <Line />
+      <div className="mx-8">
+        <Anchor />
+      </div>
+      <Line />
+    </div>
+  );
+}
+
+function LogoBreak() {
+  return (
+    <div className="w-full flex items-center my-2 max-w-2xl">
+      <Line />
+      <div className="mx-8">
+        <Link href="/">
+          <Logo className="h-20 w-20" />
+        </Link>
+      </div>
+      <Line />
+    </div>
+  );
+}
+
+function Socials() {
+  return (
+    <div className="flex items-center gap-4 text-[#720F0F]">
+      <Link href="/">
+        <FontAwesomeIcon icon={faFacebook} className="w-10 h-10" />
+      </Link>
+      <Link href="/">
+        <FontAwesomeIcon icon={faTwitter} className="w-10 h-10" />
+      </Link>
+      <Link href="/">
+        <FontAwesomeIcon icon={faInstagram} className="w-10 h-10" />
+      </Link>
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="bg-peach h-screen flex flex-col">
-      <div className="h-screen absolute top-0 left-0 w-full">
-        <div className="h-full w-full absolute z-10">
-          <div className="h-full w-full relative">
-            <Image
-              src="/tacos.jpg"
-              fill={true}
-              style={{ objectFit: "cover" }}
-              alt="Alley Anchor Logo"
-            />
+    <>
+      <div className="bg-peach h-screen flex flex-col">
+        <div className="h-screen absolute top-0 left-0 w-full">
+          <div className="h-full w-full absolute z-10">
+            <div className="h-full w-full relative">
+              <Image
+                src="/tacos.jpg"
+                fill={true}
+                style={{ objectFit: "cover" }}
+                alt="Alley Anchor Logo"
+              />
+            </div>
+            <div className="absolute top-0 left-0 bg-black/70 h-full w-full" />
+            <div className="absolute bottom-0 left-0 h-32 bg-gradient-to-t from-peach to-transparent w-full " />
+            {/* bg-gradient-to-t from-pink-500 via-red-500 to-yellow-500 */}
           </div>
-          <div className="absolute top-0 left-0 bg-black/70 h-full w-full" />
-          <div className="absolute bottom-0 left-0 h-32 bg-gradient-to-t from-peach to-transparent w-full " />
-          {/* bg-gradient-to-t from-pink-500 via-red-500 to-yellow-500 */}
         </div>
-      </div>
-      <div className="flex justify-center items-center flex-1 text-white z-50">
-        <div className="max-w-fit w-full text-center -mt-60">
-          <Header />
-          <div className="flex items-center my-4">
-            <div className="border-2 w-full rounded-md" />
-            <div className="mx-8">
-              <div className="h-12 w-12 relative">
-                <Image
-                  src="/anchor-orange.png"
-                  fill={true}
-                  alt="Alley Anchor Logo"
-                />
-              </div>
-            </div>
-            <div className="text-3xl">
-              <p className="text-red-600 font-extrabold">
-                Try our authentic Mexican street food{" "}
-              </p>
-              <p>the next time you eat out</p>
-            </div>
-            <div>
-              <Link
-                href="/menu"
-                className="bg-white text-peach rounded py-1 px-4"
-              >
-                Our Menu
-              </Link>
+        <div className="flex justify-center items-center flex-1 text-white z-20">
+          <div className="max-w-fit w-full -mt-60">
+            <Header />
+            <AnchorBreak />
+            <SubHeading />
+            <div className="flex items-center justify-center gap-12 mt-16">
+              <MenuButton />
+              <DoorDash />
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <footer className="bg-sea py-8 relative">
+        <div className="justify-center items-center flex flex-col ">
+          <LogoBreak />
+          <Socials />
+          <p className="uppercase text-[#720F0F] font-semibold my-6">
+            Powered by: Create Edge
+          </p>
+        </div>
+        <AnchorBlack />
+      </footer>
+    </>
   );
 }

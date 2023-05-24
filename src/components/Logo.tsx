@@ -1,7 +1,7 @@
 import Image from "next/image";
-export function Logo() {
+export function Logo({ className }: { className: string }) {
   return (
-    <div className="h-32 w-32 relative">
+    <div className={`${className} relative`}>
       <Image src="/logo.png" fill={true} alt="Alley Anchor Logo" />
     </div>
   );

@@ -13,21 +13,21 @@ export default function NavBar() {
   return (
     <nav className="flex justify-between items-center pt-10 px-32 text-white sticky w-full top-0 z-50 bg-transparent">
       <Link href="/">
-        <Logo />
+        <Logo className="h-44 w-44" />
       </Link>
 
       <ul
         className={`flex gap-12 text-white text-3xl font-semibold ${garamond.className}`}
       >
         <li>
-          <Link href="/" className={`${pathname === "/" && "underline"}`}>
+          <Link href="/" className={`${pathname === "/" && "border-b-4"}`}>
             Home
           </Link>
         </li>
         <li>
           <Link
             href="/menu"
-            className={`${pathname === "/menu" && "underline"}`}
+            className={`${pathname === "/menu" && "border-b"}`}
           >
             Menu
           </Link>
