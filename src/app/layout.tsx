@@ -2,6 +2,7 @@ import NavBar from "@/components/NavBar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
+import Spacer from "@/components/Spacer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col h-full min-h-screen">
+        {/* <Spacer margin="h-32 " /> */}
         <NavBar />
-        <div>{children}</div>
+        <div className="flex-1">{children}</div>
         <Footer />
       </body>
     </html>

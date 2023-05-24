@@ -34,12 +34,12 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`flex justify-between items-center ${
+      className={`flex justify-between items-center h-16 md:h-32 ${
         scrollPosition === 0
-          ? "pt-1"
-          : "pt-1 bg-gradient-to-t from-black md:from-transparent md:via-black   md:to-black "
+          ? "pt-2"
+          : "bg-gradient-to-t from-black md:from-transparent md:via-black   md:to-black "
       } text-white fixed w-full pr-4 md:px-8 top-0 z-50   transition-all duration-700 ${
-        scrollPosition > 700 && "bg-black"
+        scrollPosition > 700 && "bg-black h-20 "
       } ${pathname === "/contact" && "bg-black"}`}
     >
       <div className="absolute hidden: md:block bg-gradient-to-t from-transparent via-black   to-black h-full w-full  bottom-0 left-0  " />
@@ -51,7 +51,7 @@ export default function NavBar() {
                   pathname === "/contact" && "h-24 w-24"
                 } `
               : "h-16 w-16 md:h-24 md:w-24 "
-          } transition-all duration-300`}
+          } transition-all duration-300 mt-6`}
         />
       </Link>
       <div className="z-10">

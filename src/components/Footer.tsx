@@ -38,8 +38,8 @@ function Socials() {
 
 export default function Footer() {
   return (
-    <footer className="bg-sea  relative overflow-hidden">
-      <div className="justify-center items-center flex flex-col pt-6">
+    <footer className="bg-sea  relative ">
+      <div className="justify-center items-center flex flex-col">
         <Spacer margin={"my-2"} />
         <FancyDivider>
           <Logo className={"h-32 w-32"} />

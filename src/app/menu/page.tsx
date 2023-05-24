@@ -59,23 +59,20 @@ export default function Home() {
     <>
       <section className="bg-peach h-screen flex flex-col">
         {/* Landing Background */}
-        <div className="h-screen absolute top-0 left-0 w-full">
-          <div className="h-full w-full absolute z-10">
-            <div className="h-full w-full relative">
-              <Image
-                src="/street-tacos.jpg"
-                fill={true}
-                style={{ objectFit: "cover" }}
-                alt="Alley Anchor Logo"
-              />
-            </div>
-            <div className="absolute top-0 left-0 bg-black/80 h-full w-full" />
-            <div className="absolute bottom-0 left-0 h-2 sm:h-6 bg-gradient-to-t from-peach to-transparent w-full " />
-          </div>
+
+        <div className="h-full w-full absolute top-0 left-0 z-10">
+          <Image
+            src="/street-tacos.jpg"
+            fill={true}
+            style={{ objectFit: "cover" }}
+            alt="Alley Anchor Logo"
+          />
+          <div className="absolute top-0 left-0 bg-black/70 h-full w-full" />
+          <div className="absolute bottom-0 left-0 h-2 sm:h-6 bg-gradient-to-t from-peach to-transparent w-full " />
         </div>
         {/* End of Landing Background */}
 
-        <div className="flex flex-col h-full mt-20 md:mt-8 mx-auto justify-center px-4 items-center z-20 max-w-5xl w-full text-gray-200">
+        <div className="flex flex-col h-full mt-16  mx-auto justify-center px-4 items-center z-20 max-w-5xl w-full text-gray-200">
           <Header />
           <Spacer margin="mb-10" />
           <FancyDivider>

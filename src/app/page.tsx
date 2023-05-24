@@ -31,71 +31,69 @@ function SubHeading() {
 export default function Home() {
   return (
     <>
-      <section className="bg-peach h-screen flex flex-col relative">
+      <section className="bg-peach h-screen flex flex-col">
         {/* Landing Background */}
-        <div className="h-screen absolute top-0 left-0 w-full">
-          <div className="h-full w-full absolute z-10">
-            <div className="h-full w-full relative">
-              <Image
-                src="/tacos.jpg"
-                fill={true}
-                style={{ objectFit: "cover" }}
-                alt="Alley Anchor Logo"
-              />
-            </div>
-            <div className="absolute top-0 left-0 bg-black/80 h-full w-full" />
-            <div className="absolute bottom-0 left-0 h-2 sm:h-6 bg-gradient-to-t from-peach to-transparent w-full " />
-          </div>
+        <div className="h-full w-full absolute top-0 left-0 z-10">
+          <Image
+            src="/tacos.jpg"
+            fill={true}
+            style={{ objectFit: "cover" }}
+            alt="Alley Anchor Logo"
+          />
+          <div className="absolute top-0 left-0 bg-black/70 h-full w-full" />
+          <div className="absolute bottom-0 left-0 h-2 sm:h-6 bg-gradient-to-t from-peach to-transparent w-full " />
         </div>
         {/* End of Landing Background */}
 
-        <div className="flex flex-col h-full mt-20 md:mt-8 mx-auto justify-center px-4 items-center z-20 max-w-fit w-full text-gray-200">
-          <Header />
-          <div className="flex justify-center my-4 w-full">
-            <FancyDivider>
-              <Anchor color="orange" />
-            </FancyDivider>
-          </div>
-          <SubHeading />
+        <div className="z-20 mt-40">
+          <div className="flex flex-col h-full  md:mt-8 mx-auto justify-center px-4 items-center z-20 max-w-fit w-full text-gray-200">
+            <Header />
+            <div className="flex justify-center my-4 w-full">
+              <FancyDivider>
+                <Anchor color="orange" />
+              </FancyDivider>
+            </div>
+            <SubHeading />
 
-          <Spacer margin={"mb-14"} />
+            <Spacer margin={"mb-14"} />
 
-          <div className="flex flex-col md:flex-row w-full gap-6 items-center justify-center px-6  ">
-            <NavLink href={"/menu"}>Our Menu</NavLink>
-            <NavLink newTab href={"https://www.doordash.com"}>
-              Deliver
-            </NavLink>
+            <div className="flex flex-col md:flex-row w-full gap-6 items-center justify-center px-6  ">
+              <NavLink href={"/menu"}>Our Menu</NavLink>
+              <NavLink newTab href={"https://www.doordash.com"}>
+                Deliver
+              </NavLink>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col -mt-52 gap-24 items-center justify-center z-20 ">
-          <div className="flex justify-center">
-            <Link
-              to="main"
-              spy={true}
-              smooth={true}
-              offset={-40}
-              duration={500}
-              className=" animate-pulse  absolute  rounded-full  hover:cursor-pointer"
-            >
-              <p className={`${garamond.className} text-gray-100 text-2xl `}>
-                Learn more
-              </p>
-            </Link>
-          </div>
-          <div className="flex justify-center">
-            <Link
-              to="main"
-              spy={true}
-              smooth={true}
-              offset={-40}
-              duration={500}
-              className="border-2 animate-pulse border-white absolute  rounded-full  w-12 h-12 grid place-content-center hover:cursor-pointer"
-            >
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="w-6 h-6 text-white animate-pulse "
-              />
-            </Link>
+          <div className="flex flex-col  gap-24 items-center justify-center z-20 ">
+            <div className="flex justify-center">
+              <Link
+                to="main"
+                spy={true}
+                smooth={true}
+                offset={-40}
+                duration={500}
+                className=" animate-pulse  absolute  rounded-full  hover:cursor-pointer"
+              >
+                <p className={`${garamond.className} text-gray-100 text-2xl `}>
+                  Learn more
+                </p>
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              <Link
+                to="main"
+                spy={true}
+                smooth={true}
+                offset={-40}
+                duration={500}
+                className="border-2 animate-pulse border-white absolute  rounded-full  w-12 h-12 grid place-content-center hover:cursor-pointer"
+              >
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  className="w-6 h-6 text-white animate-pulse "
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
