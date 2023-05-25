@@ -14,8 +14,8 @@ export default function NavLink({
     <Link
       href={href}
       target={`${newTab && "_blank"}`}
-      className={`w-full uppercase  md:text-xl bg-sea/90 text-gray-200  tracking-wider text-xl
-      hover:text-gray-100 hover:bg-peach/90 rounded py-2 text-center drop-shadow-2xl  font-extrabold transition-all duration-300 ${garamond.className}`}
+      className={`w-full uppercase  md:text-xl hover:bg-sea/80 text-gray-100  tracking-wider text-xl block
+      hover:text-gray-100 border-2 border-sea  rounded py-2 text-center drop-shadow-2xl  font-extrabold transition-all duration-300 ${garamond.className}`}
     >
       {children}
     </Link>
