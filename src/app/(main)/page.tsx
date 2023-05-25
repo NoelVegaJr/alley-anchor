@@ -26,7 +26,14 @@ function Frame({
 }) {
   return (
     <div className={`relative ${className}`}>
-      {img && <Image src={img.src} fill alt={img?.alt} />}
+      {img && (
+        <Image
+          src={img.src}
+          fill
+          style={{ objectFit: "cover" }}
+          alt={img?.alt}
+        />
+      )}
 
       <div className="absolute top-0 left-0 h-full w-full ">
         <div id={id} className={`relative h-full w-full ${contentClassName}`}>
