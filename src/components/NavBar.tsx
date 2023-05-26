@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-export default function NavBar() {
+export default function NavBar({ className }: { className?: string }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const pathname = usePathname();
 
@@ -33,7 +33,7 @@ export default function NavBar() {
           : "bg-gradient-to-t from-black md:from-transparent md:via-black md:to-black "
       } text-white fixed w-full pr-4 md:px-8 top-0 z-50 transition-all duration-700 ${
         scrollPosition > 700 && "bg-black h-20 "
-      } ${pathname === "/contact" && "bg-black"}`}
+      } ${pathname === "/contact" && "bg-black"} ${className}`}
     >
       {/* <div className="absolute hidden: md:block bg-gradient-to-t from-transparent via-black   to-black h-full w-full  bottom-0 left-0  " /> */}
       <Link href="/">

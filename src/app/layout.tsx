@@ -1,10 +1,4 @@
-import NavBar from "@/components/NavBar";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import Footer from "@/components/Footer";
-import Spacer from "@/components/Spacer";
-import { usePathname } from "next/navigation";
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
