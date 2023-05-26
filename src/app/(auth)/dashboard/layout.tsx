@@ -1,8 +1,6 @@
 import "@/app/globals.css";
 import { Logo } from "@/components/Logo";
 import Stack from "@/components/Stack";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
