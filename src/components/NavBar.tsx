@@ -40,8 +40,8 @@ export default function NavBar() {
         <Logo
           className={`${
             scrollPosition === 0
-              ? `h-32 w-32 mt-6 ${
-                  pathname !== "/contact" && "md:h-44 md:w-44 "
+              ? `h-20 w-20 mt-6 ${
+                  pathname !== "/contact" && "md:h-36 md:w-36 "
                 } ${pathname === "/contact" && "h-24 w-24"} `
               : "h-16 w-16 md:h-24 md:w-24 "
           } transition-all duration-300`}
