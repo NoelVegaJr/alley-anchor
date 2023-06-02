@@ -150,7 +150,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/3tacos.jpg"
+              src="/3tacos.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/burrito.jpg"
+              src="/burrito.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -169,7 +169,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/quesadila.jpg"
+              src="/quesadila.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="relative flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/birra-tacos.jpg"
+              src="/birra-tacos.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
