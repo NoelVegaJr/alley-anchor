@@ -15,10 +15,11 @@ export default function NavBar({ className }: { className?: string }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const pathname = usePathname();
 
+  console.log(pathname);
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
-    console.log(position > 700);
   };
 
   useEffect(() => {
@@ -32,20 +33,23 @@ export default function NavBar({ className }: { className?: string }) {
     <nav
       className={` flex justify-between items-center  ${
         scrollPosition === 0
-          ? "pt-2 h-24"
-          : "bg-gradient-to-b from-black  md:via-black md:to-black "
+          ? "h-24"
+          : "bg-gradient-to-b from-black to-transparent via-black "
       } text-white fixed w-full pr-4 md:px-8 top-0 z-50 transition-all duration-700 ${
         scrollPosition > 700 && "bg-black h-20 "
-      } ${pathname === "/contact" && "bg-black"} ${className}`}
+      } ${pathname === "/contact" && "bg-black"} `}
     >
       {/* <div className="absolute hidden: md:block bg-gradient-to-t from-transparent via-black   to-black h-full w-full  bottom-0 left-0  " /> */}
-      <Link href="/">
+      <Link
+        href="/"
+        className={`${pathname === "/" && scrollPosition === 0 && "pt-6"}`}
+      >
         <Logo
           className={`${
             scrollPosition === 0
-              ? `h-20 w-20 mt-6 ${
-                  pathname !== "/contact" && "md:h-36 md:w-36 "
-                } ${pathname === "/contact" && "h-24 w-24"} `
+              ? `h-20 w-20 ${pathname !== "/contact" && "md:h-36 md:w-36 "} ${
+                  pathname === "/contact" && "h-24 w-24"
+                } `
               : "h-16 w-16 md:h-24 md:w-24 "
           } transition-all duration-300`}
         />
