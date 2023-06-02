@@ -33,7 +33,7 @@ export default async function Menu() {
     <>
       <Frame
         img={{
-          src: "/birra-tacos.png",
+          src: "/food/birria-tacos.png",
           alt: "Alley Anchor Logo",
           style: { objectFit: "cover" },
         }}
