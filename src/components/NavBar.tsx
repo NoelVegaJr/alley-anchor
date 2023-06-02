@@ -42,7 +42,9 @@ export default function NavBar({ className }: { className?: string }) {
       {/* <div className="absolute hidden: md:block bg-gradient-to-t from-transparent via-black   to-black h-full w-full  bottom-0 left-0  " /> */}
       <Link
         href="/"
-        className={`${pathname === "/" && scrollPosition === 0 && "pt-6"}`}
+        className={`${
+          pathname !== "/contact" && scrollPosition === 0 && "pt-6"
+        }`}
       >
         <Logo
           className={`${
