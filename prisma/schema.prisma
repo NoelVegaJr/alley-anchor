@@ -63,6 +63,6 @@ model MenuItem {
   img          String
   name          String
   price          String
-  description          String
+  description    String @db.Text
   visible Boolean @default(false)
 }

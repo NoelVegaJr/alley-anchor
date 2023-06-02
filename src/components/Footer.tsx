@@ -50,9 +50,9 @@ export default function Footer() {
           Powered by: Create Edge
         </p>
       </div>
-      <div className="absolute right-0 bottom-0">
+      <Link href="/signin" className="absolute right-0 bottom-0">
         <Anchor color="black" />
-      </div>
+      </Link>
     </footer>
   );
 }

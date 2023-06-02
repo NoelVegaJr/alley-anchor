@@ -17,12 +17,14 @@ function Frame({
   id,
   children,
   img,
+  objectFit = "cover",
 }: {
   className?: string;
   contentClassName?: string;
   id?: string;
-  img?: { src: string; alt: string };
+  img?: { src: string; alt: string; opacity?: string };
   children?: React.ReactNode;
+  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
 }) {
   return (
     <div className={`relative ${className}`}>
@@ -30,7 +32,8 @@ function Frame({
         <Image
           src={img.src}
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: objectFit }}
+          className={img.opacity}
           alt={img?.alt}
         />
       )}
@@ -46,8 +49,8 @@ function Frame({
 
 function Hero() {
   return (
-    <Stack gap="gap-4 absolute top-52">
-      <header className="text-center text-5xl tracking-widest text-gray-100">
+    <Stack gap="gap-4 absolute top-32 sm:top-72 px-4">
+      <header className="text-center text-3xl sm:text-4xl tracking-widest text-gray-100">
         <p>Do you enjoy flavors</p>
         <p>from south of the border?</p>
       </header>
@@ -56,10 +59,10 @@ function Hero() {
         <Anchor color="orange" />
       </LineBreak>
 
-      <p className="text-xl md:text-2xl text-center tracking-wide text-gray-100 relative">
+      <p className="text-xl md:text-3xl text-center tracking-wide text-gray-100 relative">
         Try our authentic Mexican street food the next time you eat out
       </p>
-      <Spacer margin="my-6" />
+      <Spacer margin="my-2" />
       <CallToActionButtons />
     </Stack>
   );
@@ -67,7 +70,10 @@ function Hero() {
 
 function CallToActionButtons() {
   return (
-    <Stack direction="h" gap="gap-4">
+    <Stack
+      direction="h"
+      gap="gap-4 max-w-2xl w-full mx-auto text-sm sm:text-xl"
+    >
       <NavLink href={"/menu"}>Our Menu</NavLink>
       <NavLink newTab href={"https://www.doordash.com"}>
         Delivery
@@ -80,63 +86,114 @@ export default function Home() {
   return (
     <>
       <Frame
-        className="h-screen"
+        className="h-screen w-full"
+        contentClassName="bg-black/70 flex flex-col w-full items-center justify-center  h-full "
         img={{ src: "/tacos.jpg", alt: "Alley Anchor Logo" }}
       >
-        <>
-          <Frame
-            className={`bg-black/70  h-full w-full  ${garamond.className}`}
-          >
-            <Frame className="max-w-2xl pt-20  flex flex-col items-center justify-center  h-full mx-auto ">
-              <Hero />
-              <Link
-                to="main"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 mx-auto animate-pulse hover:cursor-pointer"
-              >
-                <Stack gap={"gap-20"} center>
-                  <p
-                    className={`${garamond.className} text-gray-100 text-2xl `}
-                  >
-                    Learn more
-                  </p>
-                  <div className="border-2 rounded-full w-12 h-12 grid place-content-center">
-                    <FontAwesomeIcon
-                      icon={faChevronDown}
-                      className="w-6 h-6 text-white animate-pulse"
-                    />
-                  </div>
-                </Stack>
-              </Link>
-            </Frame>
-          </Frame>
-        </>
+        <Hero />
+        <Link
+          to="main"
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 mx-auto animate-pulse hover:cursor-pointer"
+        >
+          <Stack gap={"gap-10"} center>
+            <p className={`${garamond.className} text-gray-100 text-2xl `}>
+              Learn more
+            </p>
+            <div className="border-2 rounded-full w-12 h-12 grid place-content-center">
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="w-6 h-6 text-white animate-pulse"
+              />
+            </div>
+          </Stack>
+        </Link>
       </Frame>
-      <Frame id="main" className="h-screen bg-peach" contentClassName="py-20">
-        <article className="">
-          <p className="text-3xl text-darkPeach font-bold text-center mb-8">
+
+      <Frame
+        img={{ src: "/map.svg", alt: "map", opacity: "opacity-40" }}
+        id="main"
+        className="h-screen bg-peach px-4"
+        contentClassName="px-10 pt-16 sm:pt-60"
+        objectFit="cover"
+      >
+        <article>
+          <p className="text-xl sm:text-4xl text-darkPeach font-bold text-center mb-8">
             Are you looking for a great Mexican restaurant?
           </p>
-          <p className="max-w-xl mx-auto text-center font-semibold text-xl">
+          <p className="max-w-2xl text-lg sm:text-2xl mx-auto text-center font-semibold ">
             Alley Anchor is proud to serve authentic Mexican street food in Port
             Clinton, and Marblehead areas, with a fun environment that&apos;s
             open late, we&apos;re the perfect spot for your next late night out
             or get together.
           </p>
         </article>
+        <Spacer margin="my-8" />
         <FancyDivider>
           <Anchor color="red" />
         </FancyDivider>
-        <article className="my-20">
-          <p className="text-2xl text-darkPeach mx-auto font-bold text-center max-w-3xl ">
+
+        <Spacer margin="my-8" />
+        <article className="">
+          <p className="text-xl sm:text-3xl text-darkPeach mx-auto font-bold text-center max-w-3xl ">
             Whether you’re headed for a night out with friends, or you’re trying
             to feed the whole family, you’ll want to stop by Alley Anchor.
           </p>
         </article>
       </Frame>
+
+      <section>
+        <Stack className="bg-peach " direction="h" gap="flex-wrap">
+          <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
+            <Image
+              alt=""
+              src="/3tacos.jpg"
+              style={{ objectFit: "cover" }}
+              className="hover:scale-110 transition-all duration-200"
+              fill
+            />
+          </div>
+
+          <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
+            <Image
+              alt=""
+              src="/burrito.jpg"
+              style={{ objectFit: "cover" }}
+              className="hover:scale-110 transition-all duration-200"
+              fill
+            />
+          </div>
+          <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
+            <Image
+              alt=""
+              src="/quesadila.jpg"
+              style={{ objectFit: "cover" }}
+              className="hover:scale-110 transition-all duration-200"
+              fill
+            />
+          </div>
+          <div className="relative flex-1 h-72 overflow-hidden">
+            <Image
+              alt=""
+              src="/birra-tacos.jpg"
+              style={{ objectFit: "cover" }}
+              className="hover:scale-110 transition-all duration-200"
+              fill
+            />
+          </div>
+        </Stack>
+
+        <div
+          className={`w-full font-semibold text-center bg-peach block py-10 ${garamond.className}`}
+        >
+          <a href="/menu" className="text-3xl">
+            Check out our menu
+          </a>
+        </div>
+      </section>
     </>
   );
 }

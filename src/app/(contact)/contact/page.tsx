@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/Footer";
 import Stack from "@/components/Stack";
 import { useEffect, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
@@ -30,7 +31,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className=" flex h-full">
+      <div className="flex flex-col lg:flex-row h-full pt-32">
         <Stack gap=" max-w-2xl w-full px-8 py-12 gap-12">
           <form onSubmit={handleSubmit} className="w-full">
             <Stack gap="gap-4">
@@ -41,14 +42,14 @@ export default function ContactPage() {
                 hi? Contact us:
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 w-full">
                 <div className="flex flex-col flex-1">
                   <label htmlFor="">First Name</label>
                   <input
                     type="text"
                     value={firstName}
                     onInput={(e) => setFirstName(e.currentTarget.value)}
-                    className="border rounded p-1"
+                    className="border rounded p-1 w-full"
                     placeholder="Jane"
                   />
                 </div>
@@ -58,7 +59,7 @@ export default function ContactPage() {
                     type="text"
                     value={lastName}
                     onInput={(e) => setLastName(e.currentTarget.value)}
-                    className="border rounded p-1"
+                    className="border rounded p-1 w-full"
                     placeholder="Smith"
                   />
                 </div>
@@ -123,10 +124,6 @@ export default function ContactPage() {
               </ul>
             </div>
           </div> */}
-
-          <button className="w-fit py-1 px-6 rounded bg-darkPeach text-white">
-            Join our newsletter
-          </button>
         </Stack>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5975.334051843514!2d-82.939505!3d41.51149!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883bb2fb2b6d776b%3A0x7e1eb726bf5d7492!2s210%20Jefferson%20St%2C%20Port%20Clinton%2C%20OH%2043452!5e0!3m2!1sen!2sus!4v1685049924680!5m2!1sen!2sus"
@@ -134,6 +131,8 @@ export default function ContactPage() {
           className="w-full h-full"
         ></iframe>
       </div>
+
+      <Footer />
     </>
   );
 }

@@ -9,14 +9,14 @@ export default function Frame({
   className?: string;
   contentClassName?: string;
   id?: string;
-  img?: { src: string; alt: string };
+  img?: { src: string; alt: string; style?: any };
   children?: React.ReactNode;
 }) {
   return (
     <div className={`relative ${className}`}>
       {img ? (
         <>
-          {img && <Image src={img.src} fill alt={img?.alt} />}
+          {img && <Image src={img.src} fill alt={img?.alt} style={img.style} />}
 
           <div className="absolute top-0 left-0 h-full w-full ">
             <div

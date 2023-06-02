@@ -6,9 +6,12 @@ import { garamond } from "./fonts/fonts";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import Spacer from "./Spacer";
+import Footer from "./Footer";
 
 export default function NavBar({ className }: { className?: string }) {
+  const [open, setOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const pathname = usePathname();
 
@@ -29,8 +32,8 @@ export default function NavBar({ className }: { className?: string }) {
     <nav
       className={` flex justify-between items-center  ${
         scrollPosition === 0
-          ? "pt-2 h-32"
-          : "bg-gradient-to-t from-black md:from-transparent md:via-black md:to-black "
+          ? "pt-2 h-24"
+          : "bg-gradient-to-b from-black  md:via-black md:to-black "
       } text-white fixed w-full pr-4 md:px-8 top-0 z-50 transition-all duration-700 ${
         scrollPosition > 700 && "bg-black h-20 "
       } ${pathname === "/contact" && "bg-black"} ${className}`}
@@ -47,8 +50,42 @@ export default function NavBar({ className }: { className?: string }) {
           } transition-all duration-300`}
         />
       </Link>
-      <div className="z-10">
-        <FontAwesomeIcon icon={faBars} className="w-12 h-12 xl:hidden" />
+      <div className="z-10" onClick={() => setOpen(true)}>
+        <FontAwesomeIcon icon={faBars} className="w-10 h-10 xl:hidden" />
+      </div>
+      <div
+        className={`flex flex-col absolute top-0 left-0 ${
+          open ? "translate-y-0" : "translate-y-full"
+        } h-screen w-full transition-all duration-200 z-50 bg-sea`}
+      >
+        <div className="flex justify-end p-4" onClick={() => setOpen(false)}>
+          <FontAwesomeIcon icon={faX} className="w-8 h-8 text-white" />
+        </div>
+        <Spacer margin="my-4" />
+        <div className="flex-1 flex justify-center items-center">
+          <ul
+            className={`text-white font-semibold text-4xl text-center flex flex-col gap-10 ${garamond.className}`}
+          >
+            <li>
+              <Link href="/" onClick={() => setOpen(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/menu" onClick={() => setOpen(false)}>
+                Menu
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={() => setOpen(false)}>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="px-4">
+          <Footer />
+        </div>
       </div>
       <ul
         className={`gap-12 text-white z-10 ${
