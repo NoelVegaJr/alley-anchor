@@ -20,7 +20,7 @@ function Socials() {
       >
         <FontAwesomeIcon icon={faFacebook} className="w-6 h-6" />
       </Link>
-      <Link
+      {/* <Link
         href="/"
         className="hover:-translate-y-2 transition-all duration-100"
       >
@@ -31,7 +31,7 @@ function Socials() {
         className="hover:-translate-y-2 transition-all duration-100"
       >
         <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
-      </Link>
+      </Link> */}
     </div>
   );
 }
@@ -50,9 +50,9 @@ export default function Footer() {
           Powered by: Create Edge
         </p>
       </div>
-      <Link href="/signin" className="absolute right-0 bottom-0">
+      {/* <Link href="/signin" className="absolute right-0 bottom-0">
         <Anchor color="black" />
-      </Link>
+      </Link> */}
     </footer>
   );
 }

@@ -75,9 +75,9 @@ function CallToActionButtons() {
       gap="gap-4 max-w-2xl w-full mx-auto text-sm sm:text-xl"
     >
       <NavLink href={"/menu"}>Our Menu</NavLink>
-      <NavLink newTab href={"https://www.doordash.com"}>
+      {/* <NavLink newTab href={"https://www.doordash.com"}>
         Delivery
-      </NavLink>
+      </NavLink> */}
     </Stack>
   );
 }
@@ -88,7 +88,7 @@ export default function Home() {
       <Frame
         className="h-screen w-full"
         contentClassName="bg-black/70 flex flex-col w-full items-center justify-center  h-full "
-        img={{ src: "/tacos.jpg", alt: "Alley Anchor Logo" }}
+        img={{ src: "/3tacos.png", alt: "Alley Anchor Logo" }}
       >
         <Hero />
         <Link
@@ -114,7 +114,7 @@ export default function Home() {
       </Frame>
 
       <Frame
-        img={{ src: "/map.svg", alt: "map", opacity: "opacity-40" }}
+        img={{ src: "/map.svg", alt: "map", opacity: "opacity-20" }}
         id="main"
         className="h-screen bg-peach px-4"
         contentClassName="px-10 pt-16 sm:pt-60"
@@ -189,7 +189,10 @@ export default function Home() {
         <div
           className={`w-full font-semibold text-center bg-peach block py-10 ${garamond.className}`}
         >
-          <a href="/menu" className="text-3xl">
+          <a
+            href="/menu"
+            className="text-2xl bg-darkPeach/80 hover:bg-darkPeach transition-all duration-300 text-white py-2 px-4 rounded-lg"
+          >
             Check out our menu
           </a>
         </div>
