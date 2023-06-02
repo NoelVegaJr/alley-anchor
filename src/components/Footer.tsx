@@ -46,13 +46,10 @@ export default function Footer() {
         </FancyDivider>
         <Spacer margin={"my-1"} />
         <Socials />
-        <p className="uppercase text-[#720F0F] font-semibold my-2 text-sm">
-          Powered by: Create Edge
-        </p>
       </div>
-      {/* <Link href="/signin" className="absolute right-0 bottom-0">
+      <div className="absolute right-0 bottom-0">
         <Anchor color="black" />
-      </Link> */}
+      </div>
     </footer>
   );
 }

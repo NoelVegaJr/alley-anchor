@@ -88,7 +88,8 @@ export default function Home() {
       <Frame
         className="h-screen w-full"
         contentClassName="bg-black/70 flex flex-col w-full items-center justify-center  h-full "
-        img={{ src: "/3tacos.png", alt: "Alley Anchor Logo" }}
+        img={{ src: "/heros/hero-home.png", alt: "Alley Anchor Logo" }}
+        objectFit="cover"
       >
         <Hero />
         <Link
@@ -150,7 +151,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/3tacos.png"
+              src="/home-food/street-tacos.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -160,7 +161,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/burrito.png"
+              src="/home-food/fiesta-bowl.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -169,7 +170,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/quesadila.png"
+              src="/home-food/quesadillas.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -178,7 +179,7 @@ export default function Home() {
           <div className="relative flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/birra-tacos.png"
+              src="/home-food/burritos.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
