@@ -119,7 +119,7 @@ export default function Home() {
         id="main"
         className="h-screen bg-peach px-4"
         contentClassName="px-10 pt-16 sm:pt-60"
-        objectFit="cover"
+        objectFit="contain"
       >
         <article>
           <p className="text-xl sm:text-4xl text-darkPeach font-bold text-center mb-8">
