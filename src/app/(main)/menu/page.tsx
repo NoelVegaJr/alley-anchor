@@ -7,6 +7,7 @@ import LineBreak from "@/components/LineBreak";
 import prisma from "@/utils/db";
 import Items from "./items";
 import SmoothScroll from "./SmootScroll";
+import Image from "next/image";
 
 function Hero() {
   return (
@@ -43,15 +44,26 @@ export default async function Menu() {
         <Hero />
         <SmoothScroll />
       </Frame>
-      <Frame
+
+      <section
+        className={`bg-peach relative ${garamond.className} py-20`}
         id="menu"
-        contentClassName={`flex flex-col  gap-4 py-20 px-4 bg-peach ${garamond.className}`}
       >
-        <div className={`text-center text-4xl font-bold ${garamond.className}`}>
+        <Image
+          src="/anchors/anchor-red.png"
+          alt="red anchor"
+          fill
+          className="opacity-10"
+        />
+        <p
+          className={`text-center py-10 text-4xl font-bold ${garamond.className}`}
+        >
           Our Menu
+        </p>
+        <div className="">
+          <Items items={menuItems} />
         </div>
-        <Items items={menuItems} />
-      </Frame>
+      </section>
     </>
   );
 }

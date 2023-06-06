@@ -161,7 +161,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/food/fiesta-bowl.png"
+              src="/food/quesadillas.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
@@ -170,7 +170,7 @@ export default function Home() {
           <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
-              src="/food/quesadillas.png"
+              src="/food/fiesta-bowl.png"
               style={{ objectFit: "cover" }}
               className="hover:scale-110 transition-all duration-200"
               fill
