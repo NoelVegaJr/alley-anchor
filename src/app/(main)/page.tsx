@@ -60,7 +60,7 @@ function Hero() {
       </LineBreak>
 
       <p className="text-xl md:text-3xl text-center tracking-wide text-gray-100 relative">
-        Try our authentic Mexican street food the next time you eat out
+        Try our take on Mexican street food the next time you eat out
       </p>
       <Spacer margin="my-2" />
       <CallToActionButtons />
