@@ -46,7 +46,7 @@ export default async function Menu() {
       </Frame>
 
       <section
-        className={`bg-peach relative ${garamond.className} py-20`}
+        className={`bg-peach relative ${garamond.className} py-20 px-4`}
         id="menu"
       >
         <Image
@@ -54,14 +54,40 @@ export default async function Menu() {
           alt="red anchor"
           fill
           className="opacity-10"
+          style={{ objectFit: "cover" }}
         />
         <p
           className={`text-center py-10 text-4xl font-bold ${garamond.className}`}
         >
           Our Menu
         </p>
-        <div className="">
+        <div className="mb-24">
           <Items items={menuItems} />
+        </div>
+        <div className=" mx-auto">
+          <p
+            className={`text-center mb-6 text-4xl font-semibold ${garamond.className}`}
+          >
+            Sides and Drinks
+          </p>
+          <ul className="w-52 mx-auto text-3xl">
+            <li className="flex justify-between">
+              <p>Guacamole</p>
+              <p>$1</p>
+            </li>
+            <li className="flex justify-between">
+              <p>Sour cream</p>
+              <p>$1</p>
+            </li>
+            <li className="flex justify-between">
+              <p>Rice and beans</p>
+              <p>$4</p>
+            </li>
+            <li className="flex justify-between">
+              <p>Soda / Water</p>
+              <p>$1</p>
+            </li>
+          </ul>
         </div>
       </section>
     </>
