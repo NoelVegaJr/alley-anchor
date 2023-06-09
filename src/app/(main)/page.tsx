@@ -75,9 +75,14 @@ function CallToActionButtons() {
       gap="gap-4 max-w-2xl w-full mx-auto text-sm sm:text-xl"
     >
       <NavLink href={"/menu"}>Our Menu</NavLink>
-      {/* <NavLink newTab href={"https://www.doordash.com"}>
+      <NavLink
+        newTab
+        href={
+          "https://www.doordash.com/store/alley-anchor-tacos-port-clinton-24998205/?cursor=eyJzdG9yZV92ZXJ0aWNhbF9pZCI6bnVsbCwic2VhcmNoX2l0ZW1fY2Fyb3VzZWxfY3Vyc29yIjp7InF1ZXJ5IjoiYWxsZXkgYW5jaG9yIHRhY29zIiwiaXRlbV9pZHMiOltdLCJzZWFyY2hfdGVybSI6ImFsbGV5IGFuY2hvciB0YWNvIiwidmVydGljYWxfaWQiOi05OSwidmVydGljYWxfbmFtZSI6IiJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6W10sImlzX3NpYmxpbmciOmZhbHNlLCJmb3JjZV9zdG9yZV9hdmFpbGFiaWxpdHlfdjIiOmZhbHNlfQ==&fbclid=IwAR00yps0_Kfc1FTF_54OuO0KE8QMj2y5nM8h6NrgeOYNot_-MOWmGa2iNAQ&pickup=false"
+        }
+      >
         Delivery
-      </NavLink> */}
+      </NavLink>
     </Stack>
   );
 }
@@ -126,7 +131,7 @@ export default function Home() {
             Are you looking for a great Mexican restaurant?
           </p>
           <p className="max-w-2xl text-lg sm:text-2xl mx-auto text-center font-semibold ">
-            Alley Anchor is proud to serve authentic Mexican street food in Port
+            Alley Anchor is proud to serve our take Mexican street food in Port
             Clinton, and Marblehead areas, with a fun environment that&apos;s
             open late, we&apos;re the perfect spot for your next late night out
             or get together.

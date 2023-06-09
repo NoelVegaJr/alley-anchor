@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,8 +13,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@next-auth/prisma-adapter": "^0.4.4-canary.81",
-    "@prisma/client": "^4.14.1",
     "@sendgrid/mail": "^7.7.0",
     "@types/node": "20.2.3",
     "@types/react": "18.2.6",
@@ -23,7 +21,6 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "next": "13.4.3",
-    "next-auth": "^4.22.1",
     "nodemailer": "^6.9.2",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -34,7 +31,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/react-scroll": "^1.8.7",
-    "prisma": "^4.14.1"
+    "@types/react-scroll": "^1.8.7"
   }
 }

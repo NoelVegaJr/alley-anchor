@@ -1,5 +1,16 @@
 import Image from "next/image";
 
+const items = [
+  {
+    id: "1",
+    name: "Fiesta bowl",
+    img: "/menu/fiesta-bowl.png",
+    description:
+      "Starting off with a base of fluffy rice and hearty beans, then choose your protien: juicy chicken or savory beef. top if off with your choice of shredded colby chesse, or creamy queso. Load up on fresh toppings like diced tomatoes, cilantro, onions, zesty salsa, and chunky guacamole. Don't forget our house-made coleslaw for a crispy crunch.",
+    price: 14,
+  },
+];
+
 export default function MenuItem({
   img,
   name,
@@ -11,7 +22,7 @@ export default function MenuItem({
   name: string;
   description: string;
   index: number;
-  price: string;
+  price: number;
 }) {
   const IS_EVEN = index % 2 == 0;
   return (
@@ -23,7 +34,7 @@ export default function MenuItem({
           }   grid place-content-center font-bold relative overflow-hidden rounded`}
         >
           <Image
-            src={`/${img}`}
+            src={img}
             alt="food item"
             fill
             style={{ objectFit: "cover" }}

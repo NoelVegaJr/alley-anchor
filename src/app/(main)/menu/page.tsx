@@ -4,10 +4,10 @@ import Spacer from "@/components/Spacer";
 import Frame from "@/components/Frame";
 import Stack from "@/components/Stack";
 import LineBreak from "@/components/LineBreak";
-import prisma from "@/utils/db";
 import Items from "./items";
 import SmoothScroll from "./SmootScroll";
 import Image from "next/image";
+import { menuItems } from "@/data/menu";
 
 function Hero() {
   return (
@@ -21,7 +21,7 @@ function Hero() {
       </LineBreak>
 
       <p className="text-xl md:text-3xl text-center tracking-wide text-gray-100 relative">
-        Try our authentic Mexican street food the next time you eat out
+        Try our take Mexican street food the next time you eat out
       </p>
       <Spacer margin="my-6" />
     </Stack>
@@ -29,7 +29,6 @@ function Hero() {
 }
 
 export default async function Menu() {
-  const menuItems = await prisma.menuItem.findMany();
   return (
     <>
       <Frame
