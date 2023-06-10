@@ -57,7 +57,10 @@ export default function NavBar({ className }: { className?: string }) {
         />
       </Link>
       <div className="z-10" onClick={() => setOpen(true)}>
-        <FontAwesomeIcon icon={faBars} className="w-10 h-10 xl:hidden" />
+        <FontAwesomeIcon
+          icon={faBars}
+          className="w-10 h-10 xl:hidden cursor-pointer"
+        />
       </div>
       <div
         className={`flex flex-col absolute top-0 left-0 ${
@@ -65,7 +68,10 @@ export default function NavBar({ className }: { className?: string }) {
         } h-screen w-full transition-all duration-200 z-50 bg-sea`}
       >
         <div className="flex justify-end p-4" onClick={() => setOpen(false)}>
-          <FontAwesomeIcon icon={faX} className="w-8 h-8 text-white" />
+          <FontAwesomeIcon
+            icon={faX}
+            className="w-8 h-8 text-white cursor-pointer"
+          />
         </div>
         <Spacer margin="my-4" />
         <div className="flex-1 flex justify-center items-center">
@@ -89,9 +95,8 @@ export default function NavBar({ className }: { className?: string }) {
             </li>
           </ul>
         </div>
-        <div className="px-4">
-          <Footer />
-        </div>
+        {/* footer */}
+        <div className="px-4"></div>
       </div>
       <ul
         className={`gap-12 text-white z-10 ${
