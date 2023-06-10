@@ -181,12 +181,13 @@ export default function Home() {
               fill
             />
           </div>
-          <div className="relative flex-1 h-72 overflow-hidden">
+
+          <div className="relative w-1/2 lg:flex-1 h-72 overflow-hidden">
             <Image
               alt=""
               src="/food/birria-tacos.png"
               style={{ objectFit: "cover" }}
-              className="hover:scale-110 transition-all duration-200"
+              className=" hover:scale-[1.68] scale-150 transition-all duration-200"
               fill
             />
           </div>
